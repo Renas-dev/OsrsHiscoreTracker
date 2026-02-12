@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.IO;
+using OsrsHiscores.Helpers;
+
+class Program
+{
+    static void Main()
+    {
+        InitializeMenu.StartMenu();
+    }
+}
