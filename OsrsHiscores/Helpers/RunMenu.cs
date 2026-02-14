@@ -8,8 +8,8 @@ namespace OsrsHiscores.Helpers
         public static void PrintMenu()
         {
             Console.WriteLine("Choose an option:");
-            Console.WriteLine("[1] Update player data");
-            Console.WriteLine("[2] Fetch HighScores");
+            Console.WriteLine("[1] To print the api URL");
+            Console.WriteLine("[Q] To exit the app");
             Console.WriteLine();
         }
 
@@ -31,9 +31,11 @@ namespace OsrsHiscores.Helpers
                 input = input?.Trim().ToLower();
                 if (input == "1")
                 {
-                    Console.WriteLine(userName);
+                    string url = HiscoreUrlBuilder.BuildIronmanUrl(userName);
+                    Console.WriteLine(url);
                     ContinueMenu();
-                }else if (input == "q")
+                }
+                else if (input == "q")
                 {
                     break;
                 }

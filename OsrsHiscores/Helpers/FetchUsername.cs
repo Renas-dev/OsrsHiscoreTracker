@@ -18,7 +18,7 @@ namespace OsrsHiscores.Helpers
                 }
                 if(!string.IsNullOrWhiteSpace(userName) )
                 {
-                    Console.WriteLine($"Thank you for {userName}");
+                    Console.WriteLine($"Thank you for providing your username: {userName}");
                     return userName;
                 }
             }
