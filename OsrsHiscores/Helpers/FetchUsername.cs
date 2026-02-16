@@ -16,7 +16,7 @@ namespace OsrsHiscores.Helpers
                     Console.WriteLine("Invalid input, Please enter an Username");
                     continue;
                 }
-                if(!string.IsNullOrWhiteSpace(userName) )
+                if (!string.IsNullOrWhiteSpace(userName))
                 {
                     Console.WriteLine($"Thank you for providing your username: {userName}");
                     return userName;

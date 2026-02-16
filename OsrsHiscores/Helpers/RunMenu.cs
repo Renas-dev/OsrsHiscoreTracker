@@ -9,6 +9,7 @@ namespace OsrsHiscores.Helpers
         {
             Console.WriteLine("Choose an option:");
             Console.WriteLine("[1] To print the api URL");
+            Console.WriteLine("[2] To make a https request");
             Console.WriteLine("[Q] To exit the app");
             Console.WriteLine();
         }
@@ -19,7 +20,7 @@ namespace OsrsHiscores.Helpers
             Console.ReadLine();
         }
 
-        public static void StartMenu()
+        public static async Task StartMenu()
         {
             string userName = GrabUsername.GetUsername();
 
@@ -31,8 +32,13 @@ namespace OsrsHiscores.Helpers
                 input = input?.Trim().ToLower();
                 if (input == "1")
                 {
-                    string url = HiscoreUrlBuilder.BuildIronmanUrl(userName);
+                    string url = HiscoreUrlBuilder.BuildPlayerHiscoreUrl(userName);
                     Console.WriteLine(url);
+                    ContinueMenu();
+                }
+                else if (input == "2")
+                {
+                    await HiscoreApiClient.FetchRawAsync(userName);
                     ContinueMenu();
                 }
                 else if (input == "q")

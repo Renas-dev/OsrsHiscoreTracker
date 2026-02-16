@@ -4,8 +4,8 @@ using OsrsHiscores.Helpers;
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
-        InitializeMenu.StartMenu();
+        await InitializeMenu.StartMenu();
     }
 }
